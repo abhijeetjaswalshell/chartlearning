@@ -17,13 +17,13 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		titleFontSize: 24
 	},
 	data: [{
-		type: "line",
+		type: "column",
 		xValueFormatString: "nav",
 		dataPoints: dataPoints
 	}]
 });
 
-$.getJSON("https://api.mfapi.in/mf/118989", addData);
+$.getJSON("https://api.mfapi.in/mf/100473", addData);
 function addData(data) {
 	data = data.data 
 	for (var i = 0; i < data.length; i++) 

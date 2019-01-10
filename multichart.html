@@ -4,88 +4,180 @@
 <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
 <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
 <div id="chartContainer4" style="width: 45%; height: 300px;display: inline-block;"></div>
+<div id="chartContainer5" style="width: 45%; height: 300px;display: inline-block;"></div>
+<div id="chartContainer6" style="width: 45%; height: 300px;display: inline-block;"></div>
 <script>
     window.onload = function() {
 
-    var dataPoints = [];
-    var chart = new CanvasJS.Chart("chartContainer1",
-    {
-        animationEnabled: true,
-        title: {
-            text: "Spline Area Chart"
-        },
-        axisY: {
-            interval: 10,
-        },
-        data: [
+    
+        var dataPoints = [];
+        var chart1 = new CanvasJS.Chart("chartContainer1",
         {
-            type: "line",
-            color: "rgba(255,12,32,.3)",
-            type: "dash",
-            xValueFormatString: "nav",
-            dataPoints: dataPoints
-}]
-});
-$.getJSON("https://api.mfapi.in/mf/118989", addData);
-function addData(data) {
-	data = data.data 
-	for (var i = 0; i < data.length; i++) 
-	{ var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
-	dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
-	chart.render();
-
-}
-var chart = new CanvasJS.Chart("chartContainer2",
-    {
-        animationEnabled: true,
-        title: {
-            text: "Column Chart"
-        },
-        axisY: {
-            interval: 10,
-        },
-        data: [
-        {
-            type: "column",
-            type: "column",
-            xValueFormatString: "nav",
-            dataPoints: dataPoints
-}]
-});
-$.getJSON("https://api.mfapi.in/mf/118989", addData);
-function addData(data) {
-	data = data.data 
-	for (var i = 0; i < data.length; i++) 
-	{ var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
-	dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
-	chart.render();
-
-}
-var chart = new CanvasJS.Chart("chartContainer3",
-    {
-        animationEnabled: true,
-        title: {
-            text: "Line Chart"
-        },
-        axisY: {
-            interval: 10,
-        },
-        data: [
-        {
-            type: "line",
-            type: "line",
-            xValueFormatString: "nav",
-            dataPoints: dataPoints
-}]
-});
-$.getJSON("https://api.mfapi.in/mf/118989", addData);
-function addData(data) {
-	data = data.data 
-	for (var i = 0; i < data.length; i++) 
-	{ var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
-	dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
-	chart.render();
-
-}
+            animationEnabled: true,
+            theme: "light2",    // "light1", "dark1", "dark2"
+            title: {
+                text: "HDFC Mid Cap Opportunities Fund -Direct Plan - Growth Option"
+            },
+            axisY: {
+                interval: 10,
+            },
+            data: [
+            {
+                type: "line",
+                type: "line",
+                xValueFormatString: "nav",
+                dataPoints: dataPoints
+    }]
+    });
+    $.getJSON("https://api.mfapi.in/mf/118989", addData1);
+    function addData1(data) {
+        data = data.data 
+        for (var i = 0; i < data.length; i++) 
+        { var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
+        dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
+        chart1.render();
+    
     }
-</script>
+
+
+    
+        //var dataPoints = [];
+        var chart2 = new CanvasJS.Chart("chartContainer2",
+        {
+            animationEnabled: true,
+            theme: "light2",    // "light1", "dark1", "dark2"
+            title: {
+                text: "Franklin India Prima Fund-Growth"
+            },
+            axisY: {
+                interval: 100,
+            },
+            data: [
+            {
+                type: "column",
+                type: "column",
+                xValueFormatString: "nav",
+                dataPoints: dataPoints
+    }]
+    });
+    $.getJSON("https://api.mfapi.in/mf/100473", addData2);
+    function addData2(data) {
+        data = data.data 
+        for (var i = 0; i < data.length; i++) 
+        { var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
+        dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
+        chart2.render();
+    
+    }
+    
+        //var dataPoints = [];
+        var chart3 = new CanvasJS.Chart("chartContainer3",
+        {
+            animationEnabled: true,
+            theme: "light2",    // "light1", "dark1", "dark2"
+            title: {
+                text: "HDFC Small Cap Fund - Regular Growth Plan"
+            },
+            axisY: {
+                interval: 10,
+            },
+            data: [
+            {
+                type: "line",
+                type: "line",
+                xValueFormatString: "nav",
+                dataPoints: dataPoints
+    }]
+    });
+    $.getJSON("https://api.mfapi.in/mf/130502", addData3);
+    function addData3(data) {
+        data = data.data 
+        for (var i = 0; i < data.length; i++) 
+        { var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
+        dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
+        chart3.render();
+    
+    }    
+        //var dataPoints = [];
+        var chart = new CanvasJS.Chart("chartContainer4",
+        {
+            animationEnabled: true,
+            theme: "light2",    // "light1", "dark1", "dark2"
+            title: {
+                text: "Canara Robeco Emerging Equities - Regular Plan - GROWTH"
+            },
+            axisY: {
+                interval: 20,
+            },
+            data: [
+            {
+                type: "spline",
+                xValueFormatString: "nav",
+                dataPoints: dataPoints
+    }]
+    });
+    $.getJSON("https://api.mfapi.in/mf/102920", addData);
+    function addData(data) {
+        data = data.data 
+        for (var i = 0; i < data.length; i++) 
+        { var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
+        dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
+        chart.render();
+    
+    }
+
+    var chart4 = new CanvasJS.Chart("chartContainer5",
+        {
+            animationEnabled: true,
+            theme: "light2",    // "light1", "dark1", "dark2"
+            title: {
+                text: "Aditya Birla Sun Life Equity Fund - Growth - Regular Plan"
+            },
+            axisY: {
+                interval: 100,
+            },
+            data: [
+            {
+                type: "line",
+                xValueFormatString: "nav",
+                dataPoints: dataPoints
+    }]
+    });
+    $.getJSON("https://api.mfapi.in/mf/103166", addData4);
+    function addData4(data) {
+        data = data.data 
+        for (var i = 0; i < data.length; i++) 
+        { var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
+        dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
+        chart4.render();
+    
+    }
+
+    var chart5 = new CanvasJS.Chart("chartContainer6",
+        {
+            animationEnabled: true,
+            theme: "light2",    // "light1", "dark1", "dark2"
+            title: {
+                text: "Reliance Large Cap  Fund- Growth Plan -Growth Option"
+            },
+            axisY: {
+                interval: 10,
+            },
+            data: [
+            {
+                type: "line",
+                xValueFormatString: "nav",
+                dataPoints: dataPoints
+    }]
+    });
+    $.getJSON("https://api.mfapi.in/mf/106235", addData6);
+    function addData6(data) {
+        data = data.data 
+        for (var i = 0; i < data.length; i++) 
+        { var m_date = new Date(data[i].date.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3")); 
+        dataPoints.push({x: m_date, y: parseFloat(data[i].nav)}); }
+        chart5.render();
+    
+    }
+}
+    </script>
